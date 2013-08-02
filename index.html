@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+    <title>DN</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/dn.css">
+    <script src="js/date.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load("feeds", "1");
+      
+      function feedLoaded(result) {
+        if (!result.error) {
+          var container = document.getElementById("content");
+          container.innerHTML = '';
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+
+            // create article > heading
+            var article = document.createElement("article");
+            var heading = document.createElement("heading");
+
+            // create <a> and title
+            var a = document.createElement("a");
+            var linkText = document.createTextNode(entry.title);
+
+
+            a.appendChild(linkText);
+            a.href = entry.content;
+
+            heading.appendChild(a);
+            article.appendChild(heading);
+            container.appendChild(article);
+          }
+        }
+      }
+      
+      function OnLoad() {
+        var feed = new google.feeds.Feed("https://news.layervault.com/?format=rss");
+        feed.setNumEntries(20);
+        feed.load(feedLoaded);
+      }
+      
+      google.setOnLoadCallback(OnLoad);
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>DN Mobile</h1>
+    </div>
+    <div class="container">
+      <div class="sixteen columns">
+        <section id="content">
+          Loading...
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+body {
+  background-color: #edeef1;
+  font: 12px/20px "Helvetica Neue", Helvetica, Arial, Sans-Serif;
+  -webkit-font-smoothing: antialiased;
+  counter-reset: articles;
+}
+
+.header {
+  width: 100%;
+  background-color: #1c52a2;
+  overflow:hidden;
+  padding: .5em 0 0;
+}
+
+.header > h1 {
+  font-family: 'Helvetica Neue';
+  font-weight: 700;
+  font-size: 3.25em;
+  text-align: center;
+  color:#2d72d9;
+  text-shadow: #12376f 1px 1px,
+              #12376f 2px 2px,
+              #12376f 3px 3px,
+              #12376f 4px 4px,
+              #12376f 5px 5px,
+              #12376f 6px 6px,
+              #12376f 7px 7px,
+              #12376f 8px 8px,
+              #12376f 9px 9px,
+              #12376f 10px 10px,
+              #12376f 11px 11px,
+              #12376f 12px 12px,
+              #12376f 13px 13px,
+              #12376f 14px 14px,
+              #12376f 15px 15px,
+              #12376f 16px 16px,
+              #12376f 17px 17px,
+              #12376f 18px 18px,
+              #12376f 19px 19px,
+              #12376f 20px 20px,
+              #12376f 21px 21px,
+              #12376f 22px 22px,
+              #12376f 23px 23px,
+              #12376f 24px 24px,
+              #12376f 25px 25px,
+              #12376f 26px 26px,
+              #12376f 27px 27px,
+              #12376f 28px 28px,
+              #12376f 29px 29px,
+              #12376f 30px 30px,
+              #12376f 31px 31px,
+              #12376f 32px 32px,
+              #12376f 33px 33px,
+              #12376f 34px 34px,
+              #12376f 35px 35px,
+              #12376f 36px 36px,
+              #12376f 37px 37px,
+              #12376f 38px 38px,
+              #12376f 39px 39px,
+              #12376f 40px 40px,
+              #12376f 41px 41px,
+              #12376f 42px 42px,
+              #12376f 43px 43px,
+              #12376f 44px 44px,
+              #12376f 45px 45px,
+              #12376f 46px 46px,
+              #12376f 47px 47px,
+              #12376f 48px 48px,
+              #12376f 49px 49px,
+              #12376f 50px 50px;
+}
+
+#content {
+  margin: 1em 0 2em;
+}
+
+article {
+  background: white;
+  border-bottom: 1px solid #edeef1;
+}
+
+article > heading > a {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.33em;
+  line-height: 1.5em;
+  text-decoration: none;
+  color: #2d72d9;
+  padding: 1.25em 1em;
+}
+
+article > heading > a:visited {
+  color: #9399a8;
+}
+
+article > heading > a:before {
+  counter-increment: articles;
+  content: "" counter(articles) ". ";
+  color: #c3c9d2;
+}
+
+article > heading > a > cite {
+  display: inline-block;
+  font-weight: 400;
+  color: #9099a7;
+  font-size: 0.6em;
+  margin-left: 0.5em;
+}
