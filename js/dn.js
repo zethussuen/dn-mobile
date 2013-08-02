@@ -42,3 +42,11 @@ function OnLoad() {
 }
 
 google.setOnLoadCallback(OnLoad);
+
+var nodes = document.querySelectorAll("#logo, #refresh");
+
+for (var i = 0; i < nodes.length; i++){
+  nodes[i].addEventListener("click", function(event){
+    location.reload();
+  });
+}
