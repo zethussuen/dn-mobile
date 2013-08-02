@@ -11,8 +11,6 @@ function feedLoaded(result) {
     container.innerHTML = '';
     for (var i = 0; i < result.feed.entries.length; i++) {
       var entry = result.feed.entries[i];
-      console.log(entry.content);
-      console.log(entry.link);
       // create article > heading
       var article = document.createElement("article");
       var heading = document.createElement("heading");
