@@ -13,43 +13,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
     <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png" />
     <script src="//www.google.com/jsapi?key=AIzaSyA5m1Nc8ws2BbmPRwKu5gFradvD_hgq6G0" type="text/javascript"></script>
-    <script type="text/javascript">
-      google.load("feeds", "1");
-      
-      function feedLoaded(result) {
-        if (!result.error) {
-          var container = document.getElementById("content");
-          container.innerHTML = '';
-          for (var i = 0; i < result.feed.entries.length; i++) {
-            var entry = result.feed.entries[i];
-
-            // create article > heading
-            var article = document.createElement("article");
-            var heading = document.createElement("heading");
-
-            // create <a> and title
-            var a = document.createElement("a");
-            var linkText = document.createTextNode(entry.title);
-
-
-            a.appendChild(linkText);
-            a.href = entry.content;
-
-            heading.appendChild(a);
-            article.appendChild(heading);
-            container.appendChild(article);
-          }
-        }
-      }
-      
-      function OnLoad() {
-        var feed = new google.feeds.Feed("https://news.layervault.com/?format=rss");
-        feed.setNumEntries(20);
-        feed.load(feedLoaded);
-      }
-      
-      google.setOnLoadCallback(OnLoad);
-    </script>
+    <script src="js/dn.js"></script>
   </head>
   <body>
     <div class="header">
